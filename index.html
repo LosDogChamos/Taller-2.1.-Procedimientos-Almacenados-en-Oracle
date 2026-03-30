@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Infografía | Procedimientos Almacenados en Oracle - Los Dog Chamos</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,143 +15,460 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f4f7fc 0%, #eef2f5 100%);
+            color: #1a2c3e;
+            padding: 2rem 1.5rem;
         }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        nav ul li a:hover {
-            opacity: 0.8;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        section {
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: all 0.2s ease;
         }
 
-        section h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        /* header */
+        .hero {
+            background: linear-gradient(135deg, #0b2b3b 0%, #123e52 100%);
+            padding: 2rem 2.5rem;
+            color: white;
+            border-bottom: 4px solid #ffb347;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffb347;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            color: #0b2b3b;
+        }
+
+        .sub {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 12px;
+            border-left: 3px solid #ffb347;
+            padding-left: 1rem;
+        }
+
+        .team-badge {
+            display: inline-flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+
+        /* contenido principal */
+        .content {
+            padding: 2rem 2.5rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e0e9f0;
+            padding-bottom: 2rem;
+        }
+
+        .section-title {
             font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #123e52;
+            border-left: 6px solid #ffb347;
+            padding-left: 20px;
         }
 
-        article {
-            background: #f9f9f9;
-            border-left: 4px solid #667eea;
-            padding: 1.5rem;
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2edf2;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .card-img {
+            background: #f0f4f8;
+            text-align: center;
+            padding: 1.2rem;
+            border-bottom: 1px solid #e2edf2;
+            font-weight: 500;
+            color: #2c5a74;
+        }
+
+        .card-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        .placeholder-img {
+            background: #eef3fa;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #2c5a74;
+            font-family: monospace;
+            border-radius: 12px;
+        }
+
+        .caption {
+            padding: 1rem 1.2rem;
+            font-size: 0.85rem;
+            background: #fafdff;
+            border-top: 1px solid #eef2f8;
+            color: #2c5a74;
+        }
+
+        .code-block {
+            background: #1e2f3a;
+            color: #eef5ff;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .badge-oracle {
+            background: #c74634;
+            color: white;
+            border-radius: 40px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .badge-sql {
+            background: #1f6e43;
+            color: white;
+            border-radius: 40px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .flex-cr {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: space-between;
             margin-top: 1rem;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        article:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        article h3 {
-            color: #764ba2;
-            margin-bottom: 0.5rem;
+        .stat {
+            background: #f5f9fe;
+            border-radius: 1rem;
+            padding: 1rem;
+            flex: 1;
+            text-align: center;
         }
 
         footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
+            background: #f0f4f8;
+            padding: 1.5rem 2.5rem;
+            font-size: 0.8rem;
+            color: #2f5b74;
+            border-top: 1px solid #dce5ec;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+        @media (max-width: 800px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
             }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
+            .hero h1 {
+                font-size: 1.5rem;
             }
-
-            main {
-                padding: 0 1rem;
-            }
-
-            section {
+            .content {
                 padding: 1.5rem;
             }
+        }
+        hr {
+            margin: 1rem 0;
+        }
+        .table-summary {
+            background: #f8fafd;
+            border-radius: 1rem;
+            padding: 1rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenidos a mi sitio web</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contacto</a></li>
+<div class="container">
+    <div class="hero">
+        <h1>
+            <i class="fas fa-database"></i> 
+            Procedimientos Almacenados en Oracle
+        </h1>
+        <div class="sub">
+            Automatización CRUD | Integridad referencial | Migración SQL Server → Oracle
+        </div>
+        <div class="team-badge">
+            <span><i class="fas fa-users"></i> Los Dog Chamos 2.0 (ahora sí)</span>
+            <span><i class="fas fa-chalkboard-user"></i> Docente: Hugo Espetia Huamanga</span>
+            <span><i class="fab fa-github"></i> Taller 2.1 - Modelado de Base de Datos</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- INTRODUCCIÓN -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-pen-fancy"></i> Introducción
+            </div>
+            <p style="line-height: 1.5; margin-bottom: 1rem;">
+                El presente trabajo documenta la implementación de <strong>procedimientos almacenados en Oracle</strong>, 
+                desarrollados a partir del modelo relacional obtenido en el diagrama del taller 1.4. Dicho diagrama 
+                define la estructura de la base de datos del equipo “Los Dog Chamos”, la cual sirvió como base para 
+                automatizar las operaciones fundamentales de gestión de información: <strong>Insertar, Actualizar y Eliminar</strong> 
+                en cada tabla. El objetivo principal es optimizar la manipulación de datos, centralizar la lógica de negocio 
+                y garantizar la integridad referencial mediante el uso de excepciones y validaciones PL/SQL.
+            </p>
+            <div class="flex-cr">
+                <div class="stat"><i class="fas fa-table"></i> 6 tablas principales</div>
+                <div class="stat"><i class="fas fa-code-branch"></i> 18+ procedimientos CRUD</div>
+                <div class="stat"><i class="fas fa-check-circle"></i> Validación de integridad</div>
+                <div class="stat"><i class="fab fa-git-alt"></i> Control de versiones GitHub</div>
+            </div>
+        </div>
+
+        <!-- DESARROLLO BREVE + DIAGRAMA (img1) -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-project-diagram"></i> Desarrollo & Diagrama (Taller 1.4)
+            </div>
+            <p><strong>Problema identificado:</strong> Operaciones manuales con sentencias SQL directas generaban errores humanos, inconsistencias y falta de control de integridad referencial.<br>
+            <strong>Solución:</strong> Implementar procedimientos almacenados en Oracle (PL/SQL) que automaticen las operaciones CRUD, centralizando la lógica de negocio y manejando excepciones. Se partió del diagrama relacional del taller anterior (Carrito Cafetero / Sistema de Ventas) que incluye entidades como <code>Proveedor, Producto, Cliente, Personal, Boleta, DetalleBoleta</code>.</p>
+            
+            <!-- Espacio para imagen 1: diagrama taller 1.4 -->
+            <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-img">
+                    <i class="fas fa-image"></i> Diagrama Entidad-Relación (Taller 1.4)
+                </div>
+                <div style="padding: 1rem; text-align: center;">
+                    <img src="img1.png" alt="Diagrama del carrito cafetero - SQL Server" style="max-width:100%; border-radius: 12px; border:1px solid #ddd;" onerror="this.onerror=null; this.src='https://placehold.co/900x400/eef3fa/1e3b4a?text=Diagrama+Taller+1.4+-+img1.png'; this.alt='Imagen no encontrada, reemplazar con img1.png';">
+                </div>
+                <div class="caption">
+                    <i class="fas fa-info-circle"></i> <strong>Imagen 1:</strong> Diagrama del CARRITO CAFETERO en SQL Server (modelo base). Nota: Diagrama original sin procedimientos almacenados.
+                </div>
+            </div>
+            <div class="code-block" style="margin-top: 1rem;">
+                <i class="fas fa-arrow-right"></i> Migración: Desde SQL Server (tablas con IDENTITY, TIME) hacia Oracle (IDENTITY por defecto, INTERVAL DAY TO SECOND, manejo con JSON_TABLE).
+            </div>
+        </div>
+
+        <!-- APLICACIÓN DE PROCEDIMIENTOS ALMACENADOS (SQL y luego Oracle) -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-cogs"></i> De SQL Server a Oracle: Procedimientos CRUD
+            </div>
+            <p>Se diseñaron procedimientos para cada tabla: <strong>sp_InsertarX, sp_ActualizarX, sp_EliminarX</strong>. En la primera etapa se trabajó en SQL Server con sintaxis T-SQL y posteriormente se adaptó a Oracle PL/SQL, utilizando cursores, manejo de excepciones y parámetros OUT para mensajes de éxito/error (1: éxito, 0: error).</p>
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-img"><i class="fab fa-microsoft"></i> SQL Server (T-SQL)</div>
+                    <div class="code-block" style="background:#1e2f3a; font-size:0.7rem;">
+                        CREATE PROCEDURE sp_ActualizarProducto<br>
+                        &nbsp;&nbsp;@idProducto INT, @nombreP VARCHAR(100)...<br>
+                        AS BEGIN TRY<br>
+                        &nbsp;&nbsp;UPDATE Producto SET ... WHERE idProducto = @idProducto;<br>
+                        &nbsp;&nbsp;IF @@ROWCOUNT>0 SET @resultado='1: éxito'<br>
+                        &nbsp;&nbsp;ELSE SET @resultado='0: no encontrado'<br>
+                        END TRY<br>
+                        BEGIN CATCH ... END CATCH
+                    </div>
+                    <div class="caption">Procedimientos con TRY-CATCH y parámetro OUTPUT para retroalimentación.</div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><i class="fab fa-oracle"></i> Oracle PL/SQL</div>
+                    <div class="code-block" style="background:#1e2f3a;">
+                        CREATE OR REPLACE PROCEDURE sp_ActualizarProducto(<br>
+                        &nbsp;&nbsp;p_id NUMBER, p_nom VARCHAR2, ... , p_resultado OUT VARCHAR2) <br>
+                        IS BEGIN<br>
+                        &nbsp;&nbsp;UPDATE Producto SET ... WHERE idProducto = p_id;<br>
+                        &nbsp;&nbsp;IF SQL%ROWCOUNT > 0 THEN<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;p_resultado := '1: Actualización correcta';<br>
+                        &nbsp;&nbsp;ELSE p_resultado := '0: Producto no existe';<br>
+                        &nbsp;&nbsp;END IF; COMMIT;<br>
+                        EXCEPTION WHEN OTHERS THEN<br>
+                        &nbsp;&nbsp;p_resultado := '0: Error - '||SQLERRM; ROLLBACK;<br>
+                        END;
+                    </div>
+                    <div class="caption">Uso de SQL%ROWCOUNT, manejador de excepciones y mensajes específicos.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMAGEN 2: Código sp_Actualizacion -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-file-code"></i> Imagen 2: Código sp_Actualizacion (SQL Server / Oracle)
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <i class="fas fa-code"></i> Procedimiento sp_Actualizacion (Ejemplo genérico)
+                </div>
+                <div style="padding: 1rem; text-align: center;">
+                    <img src="img2.png" alt="Código sp_Actualizacion" style="max-width:100%; border-radius: 12px;" onerror="this.onerror=null; this.src='https://placehold.co/800x380/eef3fa/1e3b4a?text=sp_Actualizacion+-+img2.png';">
+                </div>
+                <div class="caption"><i class="fas fa-camera"></i> <strong>Imagen 2:</strong> Captura del código del procedimiento almacenado de actualización, mostrando la lógica de validación y actualización por cada tabla.</div>
+            </div>
+        </div>
+
+        <!-- IMAGEN 3: Procedimiento almacenado sp_Actualizacion en oracle (detallado) -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fab fa-oracle"></i> Imagen 3: sp_Actualizacion en Oracle PL/SQL
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    Procedimiento actualización en Oracle (cliente, producto, personal)
+                </div>
+                <div style="padding: 1rem; text-align: center;">
+                    <img src="img3.png" alt="sp_Actualizacion en Oracle" style="max-width:100%; border-radius: 12px;" onerror="this.onerror=null; this.src='https://placehold.co/800x400/eef3fa/1e3b4a?text=Oracle+PLSQL+sp_Actualizacion+-+img3.png';">
+                </div>
+                <div class="caption"><strong>Imagen 3:</strong> Vista del procedimiento almacenado en Oracle con sintaxis PL/SQL, manejo de transacciones y parámetros OUT para estado.</div>
+            </div>
+        </div>
+
+        <!-- IMAGEN 4: Resultado del procedimiento almacenado en oracle (ejecución) -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-chalkboard"></i> Imagen 4: Resultado del procedimiento almacenado en Oracle
+            </div>
+            <div class="grid-2col">
+                <div class="card">
+                    <img src="img4.png" alt="Resultado ejecución Oracle" style="width:100%; padding:1rem;" onerror="this.onerror=null; this.src='https://placehold.co/700x300/eef3fa/1e3b4a?text=Resultado+Procedimiento+Oracle+-+img4.png';">
+                    <div class="caption">Salida con mensaje "1: Cliente actualizado exitosamente" o "0: Error / no encontrado". Se visualiza el procedimiento almacenado respecto a sp_Actualizacion.</div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><i class="fas fa-check-double"></i> Ejemplo de prueba</div>
+                    <div class="code-block" style="background:#eef2f5; color:#1a2c3e;">
+                        SQL> SET SERVEROUTPUT ON;<br>
+                        SQL> DECLARE<br>
+                        &nbsp;&nbsp;res VARCHAR2(200);<br>
+                        BEGIN<br>
+                        &nbsp;&nbsp;sp_ActualizarCliente(1, 'Rodrigo Andia', '999888777', res);<br>
+                        &nbsp;&nbsp;DBMS_OUTPUT.PUT_LINE(res);<br>
+                        END;<br>
+                        /<br>
+                        > 1: Cliente actualizado exitosamente<br>
+                        PL/SQL procedure successfully completed.
+                    </div>
+                    <div class="caption">Confirmación de integridad y mensaje personalizado (1: éxito, 0: error).</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMAGEN 5: Conexión con Git / GitHub -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fab fa-github"></i> Imagen 5: Conexión con Git & Versionado
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <i class="fab fa-git-alt"></i> Control de versiones en GitHub
+                </div>
+                <div style="padding: 1rem; text-align: center;">
+                    <img src="img5.png" alt="Conexión Git" style="max-width:100%; border-radius: 12px;" onerror="this.onerror=null; this.src='https://placehold.co/800x350/eef3fa/1e3b4a?text=Git+init,+add,+commit+-+img5.png';">
+                </div>
+                <div class="caption">
+                    <i class="fas fa-terminal"></i> Se inicializó repositorio local, se configuró usuario "LosDogChamos" y se subió el código a GitHub con el commit "v1". Repositorio: <strong>Taller-2.1.-Procedimientos-Almacenados-en-Oracle</strong>. Se evidencia la colaboración y el control de cambios.
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLA DE OPERACIONES POR CADA TABLA (CRUD) -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-layer-group"></i> Operaciones por cada tabla (Insertar, Actualizar, Eliminar)
+            </div>
+            <div class="table-summary">
+                <table style="width:100%; border-collapse: collapse;">
+                    <thead style="background:#e3f0f5;">
+                        <tr><th style="padding:12px; text-align:left;">Tabla</th><th>Procedimiento Insertar</th><th>Procedimiento Actualizar</th><th>Procedimiento Eliminar</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid #dce5ec;"><td style="padding:8px;">Proveedor</td><td>sp_InsertarProveedor</td><td>sp_ActualizarProveedor</td><td>sp_EliminarProveedor</td></tr>
+                        <tr style="border-bottom:1px solid #dce5ec;"><td style="padding:8px;">Producto</td><td>sp_InsertarProducto</td><td>sp_ActualizarProducto</td><td>sp_EliminarProducto</td></tr>
+                        <tr style="border-bottom:1px solid #dce5ec;"><td style="padding:8px;">Cliente</td><td>sp_InsertarCliente</td><td>sp_ActualizarCliente</td><td>sp_EliminarCliente</td></tr>
+                        <tr style="border-bottom:1px solid #dce5ec;"><td style="padding:8px;">Personal</td><td>sp_InsertarPersonal</td><td>sp_ActualizarPersonal</td><td>sp_EliminarPersonal</td></tr>
+                        <tr style="border-bottom:1px solid #dce5ec;"><td style="padding:8px;">Boleta</td><td>sp_InsertarBoleta</td><td>sp_ActualizarBoleta</td><td>sp_EliminarBoleta</td></tr>
+                        <tr><td style="padding:8px;">DetalleBoleta</td><td>sp_InsertarDetalleBoleta</td><td>sp_ActualizarDetalleBoleta</td><td>sp_EliminarDetalleBoleta</td></tr>
+                    </tbody>
+                </table>
+                <div class="caption" style="margin-top: 12px;"><i class="fas fa-check-circle"></i> Adicional: procedimiento maestro <strong>sp_RegistrarVenta</strong> que gestiona inserción de Boleta + DetalleBoleta y actualización de stock de manera transaccional.</div>
+            </div>
+        </div>
+
+        <!-- CONCLUSIONES Y SUGERENCIAS -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-clipboard-list"></i> Conclusiones y Sugerencias
+            </div>
+            <ul style="margin-left: 2rem; line-height: 1.5;">
+                <li>✔ Se automatizaron las operaciones CRUD para todas las tablas del modelo relacional, mejorando la integridad referencial y la mantenibilidad.</li>
+                <li>✔ La migración de SQL Server a Oracle se realizó con éxito adaptando tipos de datos (IDENTITY, TIME → INTERVAL DAY TO SECOND) y manejo de transacciones.</li>
+                <li>✔ Cada procedimiento devuelve mensajes con formato "1: éxito / 0: error" para facilitar la integración con aplicaciones externas.</li>
+                <li>📌 <strong>Sugerencia:</strong> Implementar logs de auditoría y agrupar procedimientos en paquetes PL/SQL para mejorar la organización.</li>
+                <li>📌 Extender los procedimientos para operaciones transaccionales que involucren múltiples tablas (como sp_RegistrarVenta ya implementado).</li>
             </ul>
-        </nav>
-    </header>
+        </div>
 
-    <main>
-        <section>
-            <h2>Sobre mí</h2>
-            <p>Hola, esta es una página web de ejemplo con una estructura básica pero completa. Incluye estilos modernos, diseño responsive y efectos interactivos.</p>
-        </section>
-
-        <section>
-            <h2>Mis servicios</h2>
-            <article>
-                <h3>Servicio 1</h3>
-                <p>Descripción del primer servicio. Ofrecemos soluciones personalizadas para cada cliente.</p>
-            </article>
-            <article>
-                <h3>Servicio 2</h3>
-                <p>Descripción del segundo servicio. Calidad y profesionalismo garantizados.</p>
-            </article>
-        </section>
-    </main>
+        <!-- REFERENCIAS Y GITHUB -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-link"></i> Referencias & Repositorio
+            </div>
+            <p>LosDogChamos. (2026). <strong>Taller-2.1.-Procedimientos-Almacenados-en-Oracle</strong> [Repositorio de código]. GitHub.<br>
+            <i class="fab fa-github"></i> <a href="#" style="color:#0b5e7c;">https://github.com/LosDogChamos/Taller-2.1.-Procedimientos-Almacenados-en-Oracle</a> (repositorio privado del equipo).</p>
+            <div class="code-block" style="margin-top: 0.8rem; background:#2b3b44;">
+                $ git init &nbsp;|&nbsp; git add . &nbsp;|&nbsp; git config user.name "LosDogChamos" &nbsp;|&nbsp; git commit -m "v1"<br>
+                ➜ Versión base con todos los procedimientos almacenados y documentación adjunta.
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+        <div><i class="fas fa-university"></i> Universidad Andina del Cusco - Facultad de Ingeniería y Arquitectura</div>
+        <div><i class="fas fa-calendar-alt"></i> Cusco, Perú — 2026</div>
+        <div><i class="fas fa-users"></i> Andia Palomino, Mamani Apaza, Pancca Tinta, Ramos Hancco</div>
     </footer>
+</div>
 </body>
 </html>
